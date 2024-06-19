@@ -5,11 +5,11 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('contains file message', (WidgetTester tester) async {
-    // Build the Chat widget.
+    // Build the FlyerChat widget.
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
-          child: Chat(
+          child: FlyerChat(
             messages: const [
               types.FileMessage(
                 author: types.User(id: '06c33e8b-e835-4736-80f4-63f44b66666c'),

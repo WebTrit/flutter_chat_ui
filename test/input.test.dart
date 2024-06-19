@@ -12,7 +12,7 @@ void main() {
         await tester.pumpWidget(
           MaterialApp(
             home: Material(
-              child: Chat(
+              child: FlyerChat(
                 inputOptions: const InputOptions(
                   sendButtonVisibilityMode: SendButtonVisibilityMode.always,
                 ),
@@ -36,11 +36,11 @@ void main() {
     testWidgets(
       'The SendButton should always be invisible when sendButtonVisibilityMode is set to SendButtonVisibilityMode.hidden',
       (WidgetTester tester) async {
-        // Build the Chat widget.
+        // Build the FlyerChat widget.
         await tester.pumpWidget(
           MaterialApp(
             home: Material(
-              child: Chat(
+              child: FlyerChat(
                 inputOptions: const InputOptions(
                   sendButtonVisibilityMode: SendButtonVisibilityMode.hidden,
                 ),
@@ -64,11 +64,11 @@ void main() {
     testWidgets(
       'The SendButton should be invisible only when sendButtonVisibilityMode is not specified and the TextField is empty',
       (WidgetTester tester) async {
-        // Build the Chat widget.
+        // Build the FlyerChat widget.
         await tester.pumpWidget(
           MaterialApp(
             home: Material(
-              child: Chat(
+              child: FlyerChat(
                 messages: const [],
                 onSendPressed: (types.PartialText message) {},
                 user: const types.User(
@@ -89,11 +89,11 @@ void main() {
     testWidgets(
       'The SendButton should be visible only when sendButtonVisibilityMode is not specified and the TextField is not empty',
       (WidgetTester tester) async {
-        // Build the Chat widget.
+        // Build the FlyerChat widget.
         await tester.pumpWidget(
           MaterialApp(
             home: Material(
-              child: Chat(
+              child: FlyerChat(
                 messages: const [],
                 onSendPressed: (types.PartialText message) {},
                 user: const types.User(
@@ -121,11 +121,11 @@ void main() {
         // Define a bool indicating function was called.
         var isCalled = false;
 
-        // Build the Chat widget.
+        // Build the FlyerChat widget.
         await tester.pumpWidget(
           MaterialApp(
             home: Material(
-              child: Chat(
+              child: FlyerChat(
                 messages: const [],
                 onSendPressed: (types.PartialText message) => isCalled = true,
                 user: const types.User(
@@ -162,11 +162,11 @@ void main() {
         // Define a bool indicating function was called.
         var isCalled = false;
 
-        // Build the Chat widget.
+        // Build the FlyerChat widget.
         await tester.pumpWidget(
           MaterialApp(
             home: Material(
-              child: Chat(
+              child: FlyerChat(
                 messages: const [],
                 onAttachmentPressed: () => isCalled = true,
                 onSendPressed: (types.PartialText message) => {},
